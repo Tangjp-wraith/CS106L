@@ -4,7 +4,6 @@
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
-#include <tuple>
 
 using namespace std;
 
@@ -67,13 +66,6 @@ int main() {
   // iss.ignore();        // ignore the first char
   // getline(iss, line);  // line="24"
   // cout << line << endl;
-
-  auto prices = make_pair(3.4, 5);
-  auto values = make_tuple(3, 4, "hi");
-  prices.first = prices.second;
-  get<0>(values) = get<1>(values);
-  auto [a, b] = prices; // C++17
-  const auto& [x, y, z] = values;
 
   return 0;
 }
