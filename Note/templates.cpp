@@ -149,13 +149,13 @@ void getTypeTest() {
 
 // countOccurences v1
 // How many times does the integer [val] appear in vector of integers?
-int countOccurences(const vector<int>& vec, int val) {
-    int count = 0;
-    for (size_t i = 0; i < vec.size(); ++i) {
-        if (vec[i] == val) ++count;
-    }
-    return count;
-}
+// int countOccurences(const vector<int>& vec, int val) {
+//     int count = 0;
+//     for (size_t i = 0; i < vec.size(); ++i) {
+//         if (vec[i] == val) ++count;
+//     }
+//     return count;
+// }
 
 // countOccurences v2
 // How many times does the [DataType] [val] appear in vector of [DataType]?
@@ -164,16 +164,18 @@ int countOccurences(const vector<int>& vec, int val) {
 // countOccurences v3 (BAD #1)
 // How many times does the [DataType] [val] appear in [collection] of [DataType]?
 // Warning: this is poorly written as a template function. Why?
-/*
+
 template <typename DataType, typename Collection>
 int countOccurences(const Collection& collection, DataType val) {
     int count = 0;
     for (size_t i = 0; i < collection.size(); ++i) {
-        if (collection[i] == val) ++count;                              // This line is bad. Why?
+        // if (collection[i] == val) ++count;                              // This line is bad. Why?
+        auto iter=collection.begin()+i;
+        if(*iter==val) ++count;
     }
     return count;
 }
-*/
+
 
 // countOccurences v3 (BAD #2)
 // How many times does the [DataType] [val] appear in [collection] of [DataType]?
@@ -244,10 +246,10 @@ int main() {
     // minmaxTestBasic();
     // cout << "Starting minmax test explicit:" << endl;
     // minmaxTestExplicit();
-    cout << "Starting minmax test implicit:" << endl;
-    minMaxTestImplicit();
+    // cout << "Starting minmax test implicit:" << endl;
+    // minMaxTestImplicit();
     // cout << "Starting minmax type test (user input required!):" << endl;
     // getTypeTest();
-    // cout << "Starting count occurences tests: (note, nothing is printed unless you actually add cout statements." << endl;
-    // countOccurencesTasks();
+    cout << "Starting count occurences tests: (note, nothing is printed unless you actually add cout statements." << endl;
+    countOccurencesTasks();
 }
